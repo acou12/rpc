@@ -28,25 +28,25 @@ def evaluate():
     print(stack[-1])
 
 
-def pop():
-    return stack.pop() if len(stack) > 0 else 0
+def pop(n = -1):
+    return stack.pop(n) if len(stack) > 0 else 0
     
 operations = {
     '+': lambda: pop() + pop(),
-    '-': lambda: pop() - pop(),
+    '-': lambda: pop(-2) - pop(),
     '--': lambda: - pop(),
     '*': lambda: pop() * pop(),
-    '/': lambda: pop() / pop(),
-    '^': lambda: pop() ** pop(),
-    '**': lambda: pop() ** pop(),
+    '/': lambda: pop(-2) / pop(),
+    '^': lambda: pop(-2) ** pop(),
+    '**': lambda: pop(-2) ** pop(),
     'log': lambda: log(pop()),
     'log10': lambda: log10(pop()),
     'ln': lambda: log(pop()),
     'l': lambda: log10(pop()),
     'sqrt': lambda: sqrt(pop()),
     'q': lambda: sqrt(pop()),
-    'e': lambda: pop() * (10 ** pop()),
-    'ee': lambda: pop() * (10 ** pop())
+    'e': lambda: pop(-2) * (10 ** pop()),
+    'ee': lambda: pop(-2) * (10 ** pop())
 }
 
 main()
